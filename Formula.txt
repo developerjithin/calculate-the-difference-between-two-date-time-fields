@@ -1,0 +1,8 @@
+IF(
+Field_1__c - Field_2__c > 0 ,
+TEXT( FLOOR( Field_1__c - Field_2__c ) ) & " days "
+& TEXT( FLOOR( MOD( ( Field_1__c - Field_2__c ) * 24, 24 ) ) ) & " hours "
+& TEXT( ROUND( MOD( ( Field_1__c - Field_2__c ) * 24 * 60, 60 ), 0 ) ) & " minutes "
+& TEXT( ROUND( MOD( ( Field_1__c - Field_2__c ) * 24 * 60 * 60, 60 ), 0 ) ) & " seconds",
+""
+)
